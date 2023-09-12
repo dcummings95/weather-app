@@ -6,6 +6,13 @@ async function checkWeather(){
     let data = await response.json();
 
     console.log(data);
+
+    //Updates the names in accordance to the search for the API
+    document.querySelector(".city").innerHTML = data.name;
+    document.querySelector(".temp").innerHTML = data.main.temp + "°F";
+    document.querySelector(".humidity").innerHTML = data.main.humidity + "%";
+    document.querySelector(".wind").innerHTML = data.wind.speed + " mph";
+
 }
 
 checkWeather();
