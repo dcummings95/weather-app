@@ -9,7 +9,7 @@ async function checkWeather(city){
     const response = await fetch(apiUrl + city + `&appid=${apiKey}`);
     let data = await response.json();
 
-    console.log(data);
+    //console.log(data);
 
     //Updates the names in accordance to the search for the API
     document.querySelector(".city").innerHTML = data.name;
@@ -32,6 +32,8 @@ async function checkWeather(city){
         weatherIcon.src = "images/snow.png";
     }
 
+    //Update the display style to display after city name is searched
+    document.querySelector(".weather").style.display = "block";
 }
 
 //make it so when user clicks the search button we get an on click event that calls function checkWeather(city)
